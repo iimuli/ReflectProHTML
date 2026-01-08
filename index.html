@@ -1,1 +1,40 @@
 
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <title>My Simple Page</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+  <!-- Top header -->
+  <header>
+    <h1><span class="white">My</span> <span class="red">Website</span></h1>
+    <p>Some descriptive text goes here.</p>
+  </header>
+
+  <!-- Main layout -->
+  <div class="container">
+
+    <!-- Left sidebar -->
+    <aside class="sidebar">
+      <div class="button-list">
+        <button onclick="showText('one')">Button One</button>
+        <button onclick="showText('two')">Button Two</button>
+        <button onclick="showText('three')">Button Three</button>
+        <button onclick="showText('four')">Button Four</button>
+        <!-- Add more buttons as needed -->
+      </div>
+    </aside>
+
+    <!-- Middle content -->
+    <main class="content" id="content">
+      <p>Click a button to see text here.</p>
+    </main>
+
+  </div>
+
+  <script src="script.js"></script>
+</body>
+</html>
