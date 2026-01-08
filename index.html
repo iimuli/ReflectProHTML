@@ -1,40 +1,165 @@
-
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8" />
-  <title>My Simple Page</title>
-  <link rel="stylesheet" href="style.css">
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Simple GitHub Page</title>
+
+<style>
+  body {
+    margin: 0;
+    font-family: system-ui, -apple-system, sans-serif;
+    height: 100vh;
+    overflow: hidden;
+  }
+
+  /* Header */
+  header {
+    padding: 12px 16px;
+    background: #f4f4f4;
+    border-bottom: 1px solid #ccc;
+  }
+
+  header h1 {
+    margin: 0;
+    font-size: 1.4rem;
+  }
+
+  .white {
+    color: #000;
+  }
+
+  .red {
+    color: #d00000;
+  }
+
+  header p {
+    margin: 4px 0 0;
+    font-size: 0.9rem;
+    color: #555;
+  }
+
+  /* Layout */
+  .container {
+    display: flex;
+    height: calc(100vh - 80px);
+  }
+
+  /* Sidebar */
+  .sidebar {
+    width: 180px;
+    background: #eee;
+    border-right: 1px solid #ccc;
+    padding: 8px;
+  }
+
+  .button-list {
+    height: 100%;
+    overflow-y: auto;
+  }
+
+  .button-list button {
+    width: 100%;
+    padding: 10px;
+    margin-bottom: 6px;
+    border: none;
+    background: #fff;
+    border-radius: 6px;
+    cursor: pointer;
+    font-size: 0.9rem;
+  }
+
+  .button-list button.active {
+    background: #d00000;
+    color: white;
+  }
+
+  /* Content */
+  .content {
+    flex: 1;
+    padding: 16px;
+    overflow-y: auto;
+  }
+
+  .content p {
+    font-size: 1rem;
+    line-height: 1.5;
+  }
+
+  /* Mobile layout */
+  @media (max-width: 600px) {
+    .container {
+      flex-direction: column;
+    }
+
+    .sidebar {
+      width: 100%;
+      height: 120px;
+      border-right: none;
+      border-bottom: 1px solid #ccc;
+    }
+
+    .button-list {
+      display: flex;
+      gap: 8px;
+      overflow-x: auto;
+    }
+
+    .button-list button {
+      min-width: 120px;
+      margin-bottom: 0;
+    }
+  }
+</style>
 </head>
+
 <body>
 
-  <!-- Top header -->
-  <header>
-    <h1><span class="white">My</span> <span class="red">Website</span></h1>
-    <p>Some descriptive text goes here.</p>
-  </header>
+<header>
+  <h1>
+    <span class="white">My</span>
+    <span class="red">Page</span>
+  </h1>
+  <p>Short snippets shown per button</p>
+</header>
 
-  <!-- Main layout -->
-  <div class="container">
+<div class="container">
 
-    <!-- Left sidebar -->
-    <aside class="sidebar">
-      <div class="button-list">
-        <button onclick="showText('one')">Button One</button>
-        <button onclick="showText('two')">Button Two</button>
-        <button onclick="showText('three')">Button Three</button>
-        <button onclick="showText('four')">Button Four</button>
-        <!-- Add more buttons as needed -->
-      </div>
-    </aside>
+  <aside class="sidebar">
+    <div class="button-list">
+      <button onclick="showText(this, 'one')" class="active">Item 1</button>
+      <button onclick="showText(this, 'two')">Item 2</button>
+      <button onclick="showText(this, 'three')">Item 3</button>
+      <button onclick="showText(this, 'four')">Item 4</button>
+      <button onclick="showText(this, 'five')">Item 5</button>
+    </div>
+  </aside>
 
-    <!-- Middle content -->
-    <main class="content" id="content">
-      <p>Click a button to see text here.</p>
-    </main>
+  <main class="content" id="content">
+    <p>This is the first snippet. Tap or click another button to change it.</p>
+  </main>
 
-  </div>
+</div>
 
-  <script src="script.js"></script>
+<script>
+  const snippets = {
+    one: "This is the first snippet. Simple and short.",
+    two: "Here is another short piece of text.",
+    three: "Button three displays this snippet.",
+    four: "Yet another short message here.",
+    five: "Final example snippet text."
+  };
+
+  function showText(button, id) {
+    document.getElementById("content").innerHTML =
+      "<p>" + snippets[id] + "</p>";
+
+    document.querySelectorAll(".button-list button")
+      .forEach(btn => btn.classList.remove("active"));
+
+    button.classList.add("active");
+  }
+</script>
+
 </body>
 </html>
