@@ -3,7 +3,7 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Simple GitHub Page</title>
+<title>ReflectPro Changelog</title>
 
 <style>
   body {
@@ -117,21 +117,22 @@
 
 <header>
   <h1>
-    <span class="white">My</span>
-    <span class="red">Page</span>
+    <span class="white">Reflect</span>
+    <span class="red">Pro</span>
   </h1>
-  <p>Short snippets shown per button</p>
+  <p>Tällä sivulla applikaation päivytys tiedot saatavilla</p>
 </header>
 
 <div class="container">
 
   <aside class="sidebar">
     <div class="button-list">
-      <button onclick="showText(this, 'one')" class="active">Item 1</button>
-      <button onclick="showText(this, 'two')">Item 2</button>
-      <button onclick="showText(this, 'three')">Item 3</button>
-      <button onclick="showText(this, 'four')">Item 4</button>
-      <button onclick="showText(this, 'five')">Item 5</button>
+      <button onclick="showText(this, 'one')" class="active">Yleistä</button>
+      <button onclick="showText(this, 'three')">V1.1.0</button>
+      <button onclick="showText(this, 'two')">V1.0.0</button>
+      
+      //<button onclick="showText(this, 'four')">Item 4</button>
+      //<button onclick="showText(this, 'five')">Item 5</button>
     </div>
   </aside>
 
@@ -143,7 +144,8 @@
 
 <script>
   const snippets = {
-    one: "This is the first snippet. Simple and short.",
+    one: "ReflectPro on ammattilaisille tarkoitettu työväline, jolla hallita ja kehittää työnlaatua. Kyseinen applikaation on vielä kehittämisvaiheessa. Ota huomioon, että " 
+      "kehitys vaiheessa tietokannat voi käydä läpi isoja muutoksia mahdollisesti poistaen aiempaa dataa, joten ethän tallenna tärkeää/arkaluontoista dataa applikaatioon testaus vaiheessa.",
     two: "Here is another short piece of text.",
     three: "Button three displays this snippet.",
     four: "Yet another short message here.",
