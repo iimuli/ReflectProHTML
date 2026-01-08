@@ -180,7 +180,7 @@ Versio 1.0.0
 
   function showText(button, id) {
     const content = document.getElementById("content");
-    content.innerText = snippets[id];
+    content.innerHTML = snippets[id];
 
     document.querySelectorAll(".button-list button")
       .forEach(btn => btn.classList.remove("active"));
