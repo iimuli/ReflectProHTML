@@ -25,13 +25,8 @@
     font-size: 1.4rem;
   }
 
-  .white {
-    color: #000;
-  }
-
-  .red {
-    color: #d00000;
-  }
+  .white { color: #000; }
+  .red { color: #d00000; }
 
   header p {
     margin: 4px 0 0;
@@ -79,11 +74,9 @@
     flex: 1;
     padding: 16px;
     overflow-y: auto;
-  }
 
-  .content p {
-    font-size: 1rem;
-    line-height: 1.5;
+    /* IMPORTANT: preserve line breaks */
+    white-space: pre-line;
   }
 
   /* Mobile layout */
@@ -120,7 +113,7 @@
     <span class="white">Reflect</span>
     <span class="red">Pro</span>
   </h1>
-  <p>Tällä sivulla applikaation päivytys tiedot saatavilla</p>
+  <p>Tällä sivulla applikaation päivitystiedot saatavilla</p>
 </header>
 
 <div class="container">
@@ -134,21 +127,73 @@
   </aside>
 
   <main class="content" id="content">
-    <p>ReflectPro on ammattilaisille tarkoitettu työväline, jolla hallita ja kehittää työnlaatua. Kyseinen applikaation on vielä kehittämisvaiheessa. Otathan huomioon, että kehitys vaiheessa tietokannat voi käydä läpi isoja muutoksia mahdollisesti poistaen aiempaa dataa, joten ethän tallenna tärkeää/arkaluontoista dataa applikaatioon testaus vaiheessa.</p>
+ReflectPro on ammattilaisille tarkoitettu työväline, jolla hallita
+ja kehittää työnlaatua.
+
+Kyseinen applikaatio on vielä kehittämisvaiheessa.
+
+Otathan huomioon, että kehitysvaiheessa tietokannat voivat käydä
+läpi isoja muutoksia, mahdollisesti poistaen aiempaa dataa.
+
+Ethän tallenna tärkeää tai arkaluontoista dataa
+applikaatioon testausvaiheessa.
   </main>
 
 </div>
 
 <script>
   const snippets = {
-    yle: "?",
-    110: "Here is another short piece of text.",
-    100: "Button three displays this snippet.",
+    yle: `
+ReflectPro on ammattilaisille tarkoitettu työväline, jolla hallita
+ja kehittää työnlaatua.
+
+Kyseinen applikaatio on vielä kehittämisvaiheessa.
+
+Otathan huomioon, että kehitysvaiheessa tietokannat voivat käydä
+läpi isoja muutoksia, mahdollisesti poistaen aiempaa dataa.
+
+Ethän tallenna tärkeää tai arkaluontoista dataa
+applikaatioon testausvaiheessa.
+
+
+
+Lyhyet käyttöohjeet V1.0.0
+
+Luo käyttäjätili (ei sähköpostia, pelkkä käyttäjänimi esim: "testitili")
+
+Kotisivulla voit tehdä ryhmiä tarpeen mukaan.
+
+Ryhmän sisälle generoituu automaattisesti tälle ryhmälle tarkoitetttu QR koodi ja url. Voit käyttää näitä saadaksesi
+palautetta asiakkailtasi. Palautteiden keskiarvot ja vapaat tekstit ovat nähtävillä "Raportit" sivulla.
+
+Ryhmän sisälle voi myös luoda päiväkirjoja aikaleimoilla, jotka ovat muokattavissa tarvittaessa. Muistathan tallentaa muutokset!
+
+Vetolaatikossa vasemmalla ylhäällä on toistaiseksi vain kotisivu, infoa ja uloskirjautuminen.
+
+Tällä nopealla prototyypillä jokainen applikaation käynnistys vaatii toistaiseksi kirjautumisen. Seuraavassa päivityksessä sallitaan automaattinen sisäänkirjautuminen laite kohtaisesti.
+
+`,
+
+    110: `
+Versio 1.1.0 (TBD)
+
+• UI-hienosäätöä
+• Käyttäjätili formaatti vaihdettu sähköpostiin. Vanhat käyttäjät poistetaan tämän version jalkautuessa
+• Salasanan varmistus käyttäjää tehdessä
+• Profiili sivu, automaattisen sisäänkirjautumisen salliminen.
+`,
+
+    100: `
+Versio 1.0.0
+
+• Ensimmäinen julkaisu
+• Perustoiminnot käytössä
+`
   };
 
   function showText(button, id) {
-    document.getElementById("content").innerHTML =
-      "<p>" + snippets[id] + "</p>";
+    const content = document.getElementById("content");
+    content.innerText = snippets[id];
 
     document.querySelectorAll(".button-list button")
       .forEach(btn => btn.classList.remove("active"));
