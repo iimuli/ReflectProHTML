@@ -126,26 +126,15 @@
     </div>
   </aside>
 
-  <main class="content" id="content">
-ReflectPro on ammattilaisille tarkoitettu työväline, jolla hallita
-ja kehittää työnlaatua.
+  <main class="content" id="content"></main>
 
-Kyseinen applikaatio on vielä kehittämisvaiheessa.
-
-Otathan huomioon, että kehitysvaiheessa tietokannat voivat käydä
-läpi isoja muutoksia, mahdollisesti poistaen aiempaa dataa.
-
-Ethän tallenna tärkeää tai arkaluontoista dataa
-applikaatioon testausvaiheessa.
-  </main>
 
 </div>
 
 <script>
   const snippets = {
     yle: `
-ReflectPro on ammattilaisille tarkoitettu työväline, jolla hallita
-ja kehittää työnlaatua.
+ReflectPro on ammattilaisille tarkoitettu työväline, jolla on tarkoitus hallita ja kehittää omaa työnlaatua.
 
 Kyseinen applikaatio on vielä kehittämisvaiheessa.
 
@@ -200,6 +189,13 @@ Versio 1.0.0
 
     button.classList.add("active");
   }
+
+  // Show "yle" content on initial load
+document.addEventListener("DOMContentLoaded", () => {
+  const firstButton = document.querySelector(".button-list button.active");
+  showText(firstButton, "yle");
+});
+
 </script>
 
 </body>
