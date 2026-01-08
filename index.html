@@ -127,29 +127,23 @@
 
   <aside class="sidebar">
     <div class="button-list">
-      <button onclick="showText(this, 'one')" class="active">Yleistä</button>
-      <button onclick="showText(this, 'three')">V1.1.0</button>
-      <button onclick="showText(this, 'two')">V1.0.0</button>
-      
-      //<button onclick="showText(this, 'four')">Item 4</button>
-      //<button onclick="showText(this, 'five')">Item 5</button>
+      <button onclick="showText(this, 'yle')" class="active">Yleistä</button>
+      <button onclick="showText(this, '110')">V1.1.0 TBD</button>
+      <button onclick="showText(this, '100')">V1.0.0</button>
     </div>
   </aside>
 
   <main class="content" id="content">
-    <p>This is the first snippet. Tap or click another button to change it.</p>
+    <p>ReflectPro on ammattilaisille tarkoitettu työväline, jolla hallita ja kehittää työnlaatua. Kyseinen applikaation on vielä kehittämisvaiheessa. Otathan huomioon, että kehitys vaiheessa tietokannat voi käydä läpi isoja muutoksia mahdollisesti poistaen aiempaa dataa, joten ethän tallenna tärkeää/arkaluontoista dataa applikaatioon testaus vaiheessa.</p>
   </main>
 
 </div>
 
 <script>
   const snippets = {
-    one: "ReflectPro on ammattilaisille tarkoitettu työväline, jolla hallita ja kehittää työnlaatua. Kyseinen applikaation on vielä kehittämisvaiheessa. Ota huomioon, että " 
-      "kehitys vaiheessa tietokannat voi käydä läpi isoja muutoksia mahdollisesti poistaen aiempaa dataa, joten ethän tallenna tärkeää/arkaluontoista dataa applikaatioon testaus vaiheessa.",
-    two: "Here is another short piece of text.",
-    three: "Button three displays this snippet.",
-    four: "Yet another short message here.",
-    five: "Final example snippet text."
+    yle: "?",
+    110: "Here is another short piece of text.",
+    100: "Button three displays this snippet.",
   };
 
   function showText(button, id) {
